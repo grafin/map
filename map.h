@@ -9,16 +9,14 @@
 #define MAP_H_
 
 typedef void* Map;
-typedef void* Data;
-typedef void* Key;
+typedef const void* Data;
+typedef const void* Key;
 
-Map map_allocate(const unsigned int); //Returns Map_p on success or NULL on error
-int map_insert(Map const, const Key, const Data); //Returns 1 on success and 0 on error
-int map_remove(Map const, const Key); //Returns 1 on success and 0 on error
-int map_clear(Map const); //Returns 1 on success and 0 on error
+Map map_allocate(const unsigned short); //Returns Map_p on success or NULL on error
+int map_insert(const Map, Key, Data); //Returns 1 on success and 0 on error
+int map_remove(const Map, Key); //Returns 1 on success and 0 on error
+int map_clear(const Map); //Returns 1 on success and 0 on error
 int map_free(Map); //Returns 1 on success and 0 on error
-Data map_find(Map const, const Key); //Returns Data_p on success and NULL on error
-Data map_min(const Map); //Returns Data_p on success and NULL on error
-Data map_max(const Map); //Returns Data_p on success and NULL
+Data map_find(const Map, Key); //Returns Data_p on success and NULL on error
 
 #endif /* MAP_H_ */

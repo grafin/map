@@ -1,0 +1,39 @@
+Documentation for map library
+
+Types:
+typedef void* Map - pointer to map stucture
+typedef const void* Data - pointer to data structure
+typedef const void* Key - pointer to c-string
+
+Functions:
+Map map_allocate(const unsigned short s):
+Allocates new map structure in memory with size of s;
+Returns a pointer to map or NULL on error, error is printed to stderr;
+
+int map_insert(const Map m, Key k, Data d):
+Inserts data d with key k into map m;
+Returns 1 on success or 0 on error, error is printed to stderr;
+
+int map_remove(const Map m, Key k):
+Removes element with key k from map m;
+Returns 1 on success, 0 if the element with key k is not found with no output or 0 on error, error is printed to stderr;
+
+int map_clear(const Map m):
+Removes and frees all the elements from map m, map m is the same as after map_allocate;
+Returns 1 on success or 0 on error, error is printed to stderr;
+
+int map_free(Map m):
+Frees map m and all of its elements;
+Returns 1 on success or 0 on error, error is printed to stderr;
+
+Data map_find(const Map m, Key k):
+Tries to find element with key k in map m;
+Returns pointer to data with key k, NULL if not found with no output or NULL on error, error is printed to stderr;
+
+Data map_min(const Map):
+Tries to find element with smallest key in map m;
+Returns pointer to data with smallest key, NULL if not found with no output or NULL on error, error is printed to stderr;
+
+Data map_max(const Map):
+Tries to find element with biggest key in map m;
+Returns pointer to data with biggest key, NULL if not found with no output or NULL on error, error is printed to stderr;
