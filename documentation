@@ -29,11 +29,3 @@ Returns 1 on success or 0 on error, error is printed to stderr;
 Data map_find(const Map m, Key k):
 Tries to find element with key k in map m;
 Returns pointer to data with key k, NULL if not found with no output or NULL on error, error is printed to stderr;
-
-Data map_min(const Map):
-Tries to find element with smallest key in map m;
-Returns pointer to data with smallest key, NULL if not found with no output or NULL on error, error is printed to stderr;
-
-Data map_max(const Map):
-Tries to find element with biggest key in map m;
-Returns pointer to data with biggest key, NULL if not found with no output or NULL on error, error is printed to stderr;
