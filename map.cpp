@@ -5,7 +5,7 @@
 #include <string.h>
 #define get_rand(max) rand() % max
 #define DEBUG 0
-#if DEBUG == 1
+#if DEBUG > 0
 	int step = 0;
 #endif
 
@@ -38,7 +38,6 @@ static Element_p element_allocate(const Data data = NULL, const Key key = NULL,
 #endif
 	return(element);
 }
-//TODO debug and error check
 static void element_free(Element_p element) {
 	if(!element)
 		return;
